@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{message}}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: '#app', // el은 HTML 문서에 마운트 될 엘리먼트, id가 app인 것을 찾음
+            data() {
+                return {
+                    message: 'Have a nice day!'
+                }
+            },
+            template: `<div id="newDiv">
+                    <div> 첫 번째 div </div>
+                    <div> 두 번째 div </div>
+                    <div> 세 번째 div </div>
+                </div>
+                `
+        })
+    </script>
+</body>
+</html>

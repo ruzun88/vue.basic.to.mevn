@@ -1,6 +1,8 @@
 # 1장 Vue.js 소개
 <hr>
 
+>관련 Repository : npmtest, vueTest/firstapp
+
 ## 1. 개요
 - UI / 단일 페이지 어플리케이션에 유용한 Open Source js F/W
 - Angular의 양방향 데이터 바인딩, React의 가상 Dom을 반영
@@ -24,6 +26,7 @@ Vue Instance와 DOM 사이에 있으면서, 변화가 생기면 실제 DOM에 �
 1. 유연성: 구조가 단순하여 기존 프로젝트에 vue 적용 가능
 1. 양방향 데이터 바인딩을 이용한 UI와 데이터 모델간의 Reactive 기능
 1. 점점 사용자들이 많아지고 있음
+<br><br>
 
 ## 3. Vue 시작하기
 - 준비물
