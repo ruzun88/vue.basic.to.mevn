@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>오늘은 산책하기 좋은 날입니다.</p>
+    </div>
+    <div id="app">
+        <ul>
+            <li v-for="fruit in fruits">{{fruit}}</li>
+        </ul>
+    </div>
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#app',
+        data : {
+            fruits: ['딸기', '오렌지', '사과', '포도']
+        }
+    })
+    
+</script>
