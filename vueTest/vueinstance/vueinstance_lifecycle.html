@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <p>{{message}}</p>
+        </div>
+        <button @click="changeMessage">메시지 바꾸기</button>
+        <button @click="destroyInstance">Vue Instance Destroy</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: '#app', // el은 HTML 문서에 마운트 될 엘리먼트, id가 app인 것을 찾음
+            data: {
+                message: '첫번째 vue Instance'
+            },
+            methods: {
+                changeMessage() {
+                    this.message = '모두가 행복했으면...'
+                },
+                destroyInstance() {
+                    this.$destroy()
+                }
+            },
+            beforeCreate() {console.log('beforeCreate');},
+            created() {console.log('created');},
+            beforeMount() {console.log('beforeMount');},
+            mounted() {console.log('mounted');},
+            beforeUpdate() {console.log('beforeUpdate');},
+            updated() {console.log('updated');},
+            destroyed() {console.log('destroyed');}
+        })
+    </script>
+    <style>
+        #app {
+            background: blue;
+            color: white;
+            padding: 4px;
+            margin-bottom: 4px;
+        }
+        button {
+            margin-bottom: 4px;
+        }
+    </style>
+</body>
+</html>

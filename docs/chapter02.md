@@ -105,10 +105,37 @@
 - 하나의 Vue Instance 안에 여러개의 component로 구성하도록
 
 #### 2.7 뷰 인스턴스의 생명주기
+
+  _시작 단계_
 - 시작: Vue Instance가 new 키워드로 초기화 되는 순간
 - 이후 beforeCreate hook 발생
 - 이후 created hook 발생: data, event, computed, methods 같은 옵션이 설정
 - 이후 inline template, el property로 참조된 template을 컴파일, Virtual DOM Update
 - Vue Instance에 el property가 없으면 $mount 메서드 실행 후 진행됨
 
-# 73 page까지 봄. (2020/6/4)
+  <hr>
+  
+  _Mount 단계_
+- beforeMount hook 발생
+- 템플릿을 마운트: 렌더링된 HTML로 $el 생성, 실제 COM에 삽입   
+이 과정에서 virtual DOM 렌더링 및 적용됨   
+- mounted hook 발생
+- vue Instance가 mounted 상태로 변경됨
+- mounted 되면 실제 COM 일부는 vue Instance에 정의된 템플릿 및 데이터를 포함함.
+
+  <hr>
+
+  _Update 시마다 반복됨_
+- 이 데이터 변화가 발생하면, beforeUpdate hook 발생
+- DOM에 변경사항 반영 후, updated hook 발생
+  <hr>
+
+  _destory 단계_
+- destroy로 vm.$destroy() 호출시, beforeDestroy hook 발생
+- watchers, child component, event 등 제거
+- destroyed 상태로 바뀐 후, destroyed hook 발생   
+
+<br>
+
+### _Image로 보는 Lifecycle_ (출처: vue 공홈)
+<image src ="https://kr.vuejs.org/images/lifecycle.png" width = 600>
