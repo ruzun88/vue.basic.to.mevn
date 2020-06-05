@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #app > div {
+            border: 4px solid teal;
+            background:yellow;
+            padding: 4px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h3>v-if directive를 이용한 조건 처리</h3>
+        <div v-if="error">에러 발생 : 이미지 로드 실패</div>
+        <div v-show="appear">
+            <img src="data:image/jpeg;base64,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" width=100>
+        </div>
+        <button v-on:click="errorToggle">에러 On-Off</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.6/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                error: true,
+                appear: false
+            },
+            methods: {
+                errorToggle() {
+                    this.error = !this.error
+                    if(this.error == false) {
+                        this.appear = true;
+                    } else {
+                        this.appear = false;
+                    }
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>
