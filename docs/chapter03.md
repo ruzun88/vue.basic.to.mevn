@@ -16,3 +16,12 @@
   // 내용
   </html_element>
   ```
+- v-if / v-else-if / v-else 구문을 __연속__ 해서 사용할 수 있음.   
+중간에 끊어지면 정상동작하지 않는다.
+- v-if는 객체 자체가 생성되거나 생성되지 않음
+- v-show는 DOM에는 생성되어 있으나 Display 옵션이 on/off 되는 개념
+- v-for을 사용할 때는 key 속성을 설정하여 vue가 검색/정렬할 수 있도록 함
+
+## 2. v-bind로 데이터 바인딩
+- v-bind는 HTML eliment에 속성을 연결하는데 사용함
+- style 관련 데이터 바인딩은 :class, :style 사용

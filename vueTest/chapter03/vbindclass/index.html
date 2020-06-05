@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1 v-bind:class="{'applycolor': applycolor}">동적 class 속성 적용</h1>
+        <input type="checkbox" v-model="applycolor">
+        <span>h1 element 색 바꾸기</span>
+
+        <h1 v-bind:style="headingStyles">다수 스타일 적용</h1>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.6/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+            data: {
+                applycolor:false,
+                headingStyles: {
+                    color: 'blue',
+                    fontSize: '48px',
+                    textAlign: 'center'
+                }
+            }
+        })
+    </script>
+    <style>
+        .applycolor{color:blue;}
+    </style>
+</body>
+</html>
