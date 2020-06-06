@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #app{
+            background: blue;
+            padding: 6px;
+            color: white;
+        }
+        .box{
+            background: teal;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        {{name}}
+        <child-component v-bind:childmessage="message"></child-component>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.6/dist/vue.js"></script>
+    <script>
+        Vue.component("child-component", {
+            props:['childmessage'],
+            template: `<div class="box"> {{childmessage}} </div>`
+        });
+
+        new Vue({
+            el:'#app',
+            data :{
+                name: 'props 이용 데이터 전달',
+                message: '부모 컴포넌트로 부터 전달됨'
+            }
+        })
+    </script>
+</body>
+</html>
