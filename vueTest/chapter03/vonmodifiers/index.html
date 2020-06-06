@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        #outer { width: 320px; margin: 5px; height: 120px; }
+        #middle { margin: 5px; padding: 5px; width: 250px; }
+        #inner { margin: 5px; padding: 5px; }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <a href="http://www.google.com" @click.prevent="goGoogle" target="_blank">이동</a>
+        <div id="outer" class="blue white-text text-darken-4" @click="handleClickEvent">
+            Outer
+            <div id="middle" class="teal darken-2" @click.stop="handleClickEvent">
+                Middle
+                <div id="inner" class="cyan" @click="handleClickEvent">Inner</div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.6/dist/vue.js"></script>
+    <script>
+        //Event Bubbling
+        var vm = new Vue({
+            el: '#app',
+            methods:{
+                handleClickEvent($event) {
+                    console.log('handleClickEvent target: [' + $event.target.id
+                    + '] currentTarget: [' + $event.currentTarget.id + ']');
+                    //$event.stopPropagation(); // 이벤트 버블링 중지
+                },
+                goGoogle(){
+                    console.log("anchor 태그 clicked. go to google page.");
+                }
+            }
+        })
+        
+        //// Event Capturing
+        // for (let elem of document.querySelectorAll('div')) {
+        //     elem.addEventListener("click", e=>console.log('Capturing: ' + elem.id), true)
+        // }
+    </script>
+</body>
+</html>

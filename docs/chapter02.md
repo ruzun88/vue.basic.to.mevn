@@ -30,12 +30,15 @@
     - created
 
 ## 2. 프로퍼티 종류 (상세)
+
 #### 2.1 template 
 - Vue 화면에 표시할 HTML Element(h3, button 등) 또는 스타일을 설정   
 (vueTest/vueinstance/template.html 참고)
+
 #### 2.2 methods
 - 이벤트 처리 등 동적 작업을 처리하는데 사용   
 (vueTest/vueinstance/methods.html 참고)
+
 #### 2.3 computed
 - Vue Instance의 data 조작에 유용함
 - methods 프로퍼티는 명시적인 호출에 따라 호출됨(클릭 등)
