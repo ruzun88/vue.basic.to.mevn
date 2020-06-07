@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        label {
+            color: #cc0077;
+        }
+        table, tr, td {border: 1px solid blue;}
+        td:nth-last-of-type(-n+2) {text-align: right;}
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="row">
+                <!-- button -->
+                <a class="btn waves-effect waves-red blue" @click="showMessage($event)">wireless</a>
+                <a class="btn-flat waves-effect waves-teal" @click="showMessage($event)">
+                    <i class="material-icons">cloud</i>cloud
+                </a>
+                <a class="btn-floating waves-effect waves-yellow" @click="showMessage($event)">
+                    <i class="material-icons">wifi</i>
+                </a>
+                <button class="btn waves-effect waves-light" type="submit" name="action">
+                    보내기
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+
+            <table class="striped highlight responsive-table">
+                <thead class="blue white-text">
+                    <tr><th>주문번호</th><th>상품명</th><th>수량</th><th>가격</th></tr>
+                </thead>
+                <tbody>
+                    <tr v-for="order in orders" :key="order.order_num">
+                        <td>{{order.order_num}}</td>
+                        <td>{{order.item}}</td>
+                        <td>{{order.quantity}}</td>
+                        <td>{{order.price}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="app.js"></script>
+    </div>
+</body>
+</html>
