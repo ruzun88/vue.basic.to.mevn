@@ -69,3 +69,16 @@ class="col s3 m4 offset-m4" 등으로 사용
 #### 1.11 Scrollspy
 - HTML Tag 추적하여 가운데 위치하게 함
 <br><br>
+
+## 2. Vuetify
+- Google Material Design에 기반을 둔 Library
+- v-app 컴포넌트 안에 컨텐츠를 작성함
+
+#### 2.1 Components
+- Color와 Text는 Google Material Design 기반
+- 현재 사용하는 장치의 breakpoint는 console.log(this.$vuetify.breakpoint)로 알 수 있음   
+해당 breakpoint로 반응형을 만들 수 있음
+- Grid는 12개 동일 크기 컬럼으로 구성됨   
+v-container가 그리드를 의미하며, 행은 \<v-layout row\>를 이용해 정의함   
+행에 들어갈 콘텐츠는 v-flex로 정의
+- dialog는 사용자에게 알림 또는 의사결정을 요구하는데 사용
