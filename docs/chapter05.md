@@ -82,3 +82,5 @@ class="col s3 m4 offset-m4" 등으로 사용
 v-container가 그리드를 의미하며, 행은 \<v-layout row\>를 이용해 정의함   
 행에 들어갈 콘텐츠는 v-flex로 정의
 - dialog는 사용자에게 알림 또는 의사결정을 요구하는데 사용
+- Form은 사용자 입력 데이터를 처리할 때 사용
+- v-toolbar는 웹사이트 탐색에 사용, v-navigation-drawer과 함께 사용
