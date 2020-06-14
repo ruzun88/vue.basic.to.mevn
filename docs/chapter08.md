@@ -25,3 +25,23 @@ getter의 결과도 의존성에 변화가 생겼을 때만 재평가 되기 때
 - 적용 방법
     1. store.js에서 mutation 정의
     2. 컴포넌트의 해당 메서드 부분 커밋 (적용)
+
+## 4. Actions
+- mutation commit을 통한 간접적 상태 수정
+- 비동기로 동작하여, 대용량 파일 전송 등에 사용될 수 있음
+- 적용방법
+    1. store.js에서 action 정의
+    1. 컴포넌트의 해당 메서드 부분에서 dispatch
+
+## 5. mapState, mapGetters, mapMutations, mapActions
+- mapState: Vuex에서 state를 연결하는 helper
+- mapGetters: getter를 computed에 매핑
+- mapMutations: mutation commit을 단순화
+- mapActions: action dispatch를 단순화
+
+## 6. Mutation vs Actions
+#### 6.1 Mutation
+- 동기 처리
+
+#### 6.2 Action
+- 비동기 처리
